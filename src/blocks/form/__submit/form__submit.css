@@ -1,0 +1,7 @@
+.form__submit {
+  width: 40px;
+  height: 36px;
+  background-color: #4287f5;
+  border: none;
+  border-radius: 0 5px 5px 0;
+}

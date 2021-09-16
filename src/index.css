@@ -1,1 +1,8 @@
+/* searchbar styles */
+@import url(./blocks/search/search.css);
 
+/* form styles */
+@import url(./blocks/form/form.css);
+@import url(./blocks/form/__input/form__input.css);
+@import url(./blocks/form/__submit/form__submit.css);
+@import url(./blocks/form/__search-icon/form__search-icon.css);
