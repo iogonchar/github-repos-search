@@ -1,14 +1,18 @@
 import React from "react";
 
-const Card = () => {
+const Card = (cards) => {
   return (
     <ul className="cards">
-      <li className="card">
-        <h2 className="card__title">ant-design/ant-design-mobile</h2>
-        <p className="card__description">A configurable mobile UI</p>
-        <p className="card__main-lang">TypeScript</p>
-        <p className="card__stars">9.2k</p>
-      </li>
+      {
+        cards.cards.map((card) => (
+          <li className="card">
+            <h2 className="card__title">{card.node.nameWithOwner}</h2>
+            <p className="card__description">{card.node.description}</p>
+            <p className="card__main-lang">{card.node.primaryLanguage.name}</p>
+            <p className="card__stars">{card.node.stargazerCount}</p>
+          </li>
+        ))
+      }
     </ul>
   );
 }
