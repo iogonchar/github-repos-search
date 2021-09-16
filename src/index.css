@@ -9,3 +9,11 @@
 @import url(./blocks/form/__input/form__input.css);
 @import url(./blocks/form/__submit/form__submit.css);
 @import url(./blocks/form/__search-icon/form__search-icon.css);
+
+/* card styles */
+@import url(./blocks/cards/cards.css);
+@import url(./blocks/card/card.css);
+@import url(./blocks/card/__title/card__title.css);
+@import url(./blocks/card/__description/card__description.css);
+@import url(./blocks/card/__main-lang/card__main-lang.css);
+@import url(./blocks/card/__stars/card__stars.css);
