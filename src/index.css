@@ -1,3 +1,6 @@
+/* body styles */
+@import url(./blocks/body/body.css);
+
 /* searchbar styles */
 @import url(./blocks/search/search.css);
 
