@@ -2,7 +2,7 @@ import React from "react";
 
 import Card from "./Card";
 
-const Main = ({ cards, onFetchMore }) => {
+const Main = ({ cards, onFetchMore, onRepositoryClick }) => {
   return (
     !cards.length
       ? <p>Ничего не найдено</p>
@@ -17,6 +17,7 @@ const Main = ({ cards, onFetchMore }) => {
               <Card
                 key={card.node.id}
                 card={card}
+                onRepositoryClick={onRepositoryClick}
               />
             ))
           }
