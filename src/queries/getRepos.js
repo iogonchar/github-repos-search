@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 export const GET_REPOS = gql`
-  query getRepos($query: String!, $after: String) {
+  query repositories($query: String!, $after: String) {
     search(query:$query, type:REPOSITORY, first:10, after:$after) {
       repositoryCount
       pageInfo {
@@ -11,6 +11,8 @@ export const GET_REPOS = gql`
       edges {
         node {
           ... on Repository {
+            issues {totalCount}
+            pullRequests {totalCount}
             id
             nameWithOwner
             description
@@ -18,6 +20,12 @@ export const GET_REPOS = gql`
             primaryLanguage {
               color
               name
+            }
+            languages(first:100) {
+              nodes {
+                name
+                color
+              }
             }
           }
         }
