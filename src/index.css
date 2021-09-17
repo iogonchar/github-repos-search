@@ -22,4 +22,5 @@
 @import url(./blocks/card/__title/card__title.css);
 @import url(./blocks/card/__description/card__description.css);
 @import url(./blocks/card/__main-lang/card__main-lang.css);
+@import url(./blocks/card/__main-lang-color/card__main-lang-color.css);
 @import url(./blocks/card/__stars/card__stars.css);
