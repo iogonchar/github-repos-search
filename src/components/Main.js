@@ -1,28 +1,30 @@
-import React from "react";
+import React from 'react';
 
-import Card from "./Card";
+import Card from './Card';
 
-const Main = ({ cards, onFetchMore, onRepositoryClick }) => {
+const Main = ({ cards, searchResultsCount, onFetchMore, onRepositoryClick }) => {
   return (
     !cards.length
-      ? <p>Ничего не найдено</p>
+      ? <h2 className="content__notification">По вашему запросу ничего не найдено :'(</h2>
       : <>
-      <ul className="cards">
-          {
-            cards
-            .filter((card, idx) => {
-              return idx === cards.indexOf(card);
-            })
-            .map((card) => (
-              <Card
-                key={card.node.id}
-                card={card}
-                onRepositoryClick={onRepositoryClick}
-              />
-            ))
-          }
-        </ul>
-        <button onClick={onFetchMore}>ЕЩЕЩЕЩЕ</button>
+          <h2 className="content__notification">Найдено репозиториев: { searchResultsCount }</h2>
+          <ul className="cards">
+            {
+              cards
+                // remove duplicate cards
+                .filter((card, index) => {
+                  return index === cards.indexOf(card);
+                })
+                .map((card) => (
+                  <Card
+                    key={card.node.id}
+                    card={card}
+                    onRepositoryClick={onRepositoryClick}
+                  />
+                ))
+            }
+          </ul>
+          <button className="button" type="button" onClick={onFetchMore}>Загрузить ещё</button>
         </>
   );
 }

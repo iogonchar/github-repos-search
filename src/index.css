@@ -4,6 +4,12 @@
 /* searchbar styles */
 @import url(./blocks/search/search.css);
 
+/* content styles */
+@import url(./blocks/content/content.css);
+
+/* button styles */
+@import url(./blocks/button/button.css);
+
 /* form styles */
 @import url(./blocks/form/form.css);
 @import url(./blocks/form/__input/form__input.css);
