@@ -5,7 +5,7 @@ import { setContext } from "@apollo/client/link/context";
 import './index.css';
 import App from './components/App';
 
-const token = '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';
+const token = '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';
 
 const httpLink = createHttpLink({
   uri: 'https://api.github.com/graphql',

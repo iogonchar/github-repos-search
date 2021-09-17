@@ -1,30 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-import { useQuery } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 import { GET_REPOS } from "../queries/getRepos";
 
 import SearchBar from "./SearchBar";
-import Card from "./Card";
+import Main from "./Main";
 
 const App = () => {
-  const [cards, setCards] = useState([]);
+  const [getRepos, { loading, data }] = useLazyQuery(GET_REPOS);
 
-  const  { loading, error, data } = useQuery(GET_REPOS);
-
-  useEffect(() => {
-    if (!loading) {
-      setCards(data.search.edges);
-    }
-  }, [data])
-
-  if (loading) {
-    return (<h1>LOADING...</h1>)
+  const handleSearchRepos = (query) => {
+    getRepos({variables: { query }});
   }
+
+  // if(loading) {
+  //   return(<p>Грузим данные</p>)
+  // }
 
   return (
     <div>
-      <SearchBar />
-      <Card cards={cards} />
+      <SearchBar onSearch={handleSearchRepos} />
+      {
+        loading
+          ? <p>Поиск</p>
+          : !data
+            ? <p>Попробуйте поискать</p>
+            : <Main cards={data.search.edges} />
+      }
+
+
+      {/* {
+      !data
+        ? <p>Ничего не найдено.</p>
+        : <Main cards={data.search.edges} />
+      } */}
     </div>
   );
 }
