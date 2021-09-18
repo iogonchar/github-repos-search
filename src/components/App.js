@@ -7,6 +7,7 @@ import { GET_REPOS } from '../queries/getRepos';
 import SearchBar from './SearchBar';
 import Main from './Main';
 import Repository from './Repository';
+import PageNotFound from './PageNotFound';
 
 const App = () => {
   const history = useHistory();
@@ -61,6 +62,10 @@ const App = () => {
         </Route>
 
         <Route path="/repository" component={Repository} />
+
+        <Route path="*">
+            <PageNotFound />
+        </Route>
       </Switch>
 
     </div>
