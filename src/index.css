@@ -24,3 +24,9 @@
 @import url(./blocks/card/__main-lang/card__main-lang.css);
 @import url(./blocks/card/__main-lang-color/card__main-lang-color.css);
 @import url(./blocks/card/__stars/card__stars.css);
+
+/* repository styles */
+@import url(./blocks/repository/repository.css);
+@import url(./blocks/repository/__item/repository__item.css);
+@import url(./blocks/repository/__lang/repository__lang.css);
+@import url(./blocks/repository/__lang-color/repository__lang-color.css);

@@ -1,0 +1,12 @@
+.repository__item {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.repository__item:first-child {
+  font-weight: bold;
+}
+
+.repository__item:last-child {
+  margin-bottom: 0;
+}

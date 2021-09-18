@@ -1,0 +1,9 @@
+.repository {
+  width: 50%;
+  background-color: #e6e6e6;
+  margin: 0;
+  padding: 15px;
+  border-radius: 10px;
+  list-style: none;
+  text-align: left;
+}
