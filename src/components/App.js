@@ -18,7 +18,6 @@ const App = () => {
   }
 
   const handleFetchMore = () => {
-    console.log('AAA', data.search.pageInfo.endCursor);
     fetchMore({
       variables: {
         after: data.search.pageInfo.endCursor
@@ -54,6 +53,7 @@ const App = () => {
                   : <Main
                       cards={data.search.edges}
                       searchResultsCount={data.search.repositoryCount}
+                      hasNextPage={data.search.pageInfo.hasNextPage}
                       onFetchMore={handleFetchMore}
                       onRepositoryClick={handleRepositoryClick}
                     />

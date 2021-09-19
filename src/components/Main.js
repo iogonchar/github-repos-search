@@ -2,7 +2,7 @@ import React from 'react';
 
 import Card from './Card';
 
-const Main = ({ cards, searchResultsCount, onFetchMore, onRepositoryClick }) => {
+const Main = ({ cards, searchResultsCount, hasNextPage, onFetchMore, onRepositoryClick }) => {
   return (
     !cards.length
       ? <h2 className="content__notification">По вашему запросу ничего не найдено :'(</h2>
@@ -24,7 +24,12 @@ const Main = ({ cards, searchResultsCount, onFetchMore, onRepositoryClick }) => 
                 ))
             }
           </ul>
-          <button className="button" type="button" onClick={onFetchMore}>Загрузить ещё</button>
+          <button
+            className={hasNextPage ? "button" : "button button_disabled"}
+            type="button"
+            onClick={onFetchMore}
+            disabled={!hasNextPage}
+          >Загрузить ещё</button>
         </>
   );
 }

@@ -9,6 +9,7 @@
 
 /* button styles */
 @import url(./blocks/button/button.css);
+@import url(./blocks/button/_disabled/button_disabled.css);
 
 /* form styles */
 @import url(./blocks/form/form.css);

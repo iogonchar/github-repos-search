@@ -6,7 +6,7 @@ export const GET_REPOS = gql`
       repositoryCount
       pageInfo {
         endCursor
-        startCursor
+        hasNextPage
       }
       edges {
         node {
