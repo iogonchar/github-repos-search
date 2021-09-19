@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Card = ({ card, onRepositoryClick }) => {
 
@@ -18,7 +18,6 @@ const Card = ({ card, onRepositoryClick }) => {
             </p>
           : <p className="card__main-lang">Язык репозитория не указан</p>
       }
-      {/* <p className="card__main-lang">{card.node.primaryLanguage ? card.node.primaryLanguage.name : 'Не указан'}</p> */}
       <p className="card__stars">Stars: {card.node.stargazerCount}</p>
     </li>
   );
