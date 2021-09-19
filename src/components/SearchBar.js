@@ -1,14 +1,8 @@
-import React, { useState } from "react";
+import React from 'react';
 
 import searchIcon from '../images/search.svg';
 
 const SearchBar = ({ onSearch, query, onQueryChange }) => {
-  // const [query, setQuery] = useState('');
-
-  // const handleQueryChange = (e) => {
-  //   setQuery(e.target.value);
-  // }
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
