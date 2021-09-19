@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { useLazyQuery } from '@apollo/client';
 
@@ -12,6 +12,12 @@ import PageNotFound from './PageNotFound';
 const App = () => {
   const history = useHistory();
   const [getRepos, { loading, data, fetchMore }] = useLazyQuery(GET_REPOS);
+
+  const [query, setQuery] = useState('');
+
+  const handleQueryChange = (e) => {
+    setQuery(e.target.value);
+  }
 
   const handleSearchRepos = (query) => {
     getRepos({variables: { query, after: null }});
@@ -43,7 +49,7 @@ const App = () => {
     <div>
       <Switch>
         <Route exact path="/">
-          <SearchBar onSearch={handleSearchRepos} />
+          <SearchBar onSearch={handleSearchRepos} query={query} onQueryChange={handleQueryChange}/>
           <section className="content">
             {
               loading
