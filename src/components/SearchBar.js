@@ -18,7 +18,14 @@ const SearchBar = ({ onSearch }) => {
   return (
     <div className="search">
       <form className="form" onSubmit={handleSubmit}>
-        <input className="form__input" placeholder="Seacrh some repos" onChange={handleQueryChange} value={query || ''} />
+        <input
+          className="form__input"
+          placeholder="Seacrh some repos"
+          onChange={handleQueryChange}
+          value={query || ''}
+          required
+          maxLength="100"
+        />
         <button className="form__submit">
           <img className="form__search-icon" src={searchIcon} />
         </button>
