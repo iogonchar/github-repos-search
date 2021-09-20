@@ -21,7 +21,7 @@ const SearchBar = ({ onSearch, query, onQueryChange }) => {
           maxLength="100"
         />
         <button className="form__submit">
-          <img className="form__search-icon" src={searchIcon} />
+          <img className="form__search-icon" src={searchIcon} alt="Найти"/>
         </button>
       </form>
     </div>
